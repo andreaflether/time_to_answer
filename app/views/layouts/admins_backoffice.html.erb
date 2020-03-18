@@ -40,9 +40,10 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <%= link_to admins_backoffice_welcome_index_path, class: "nav-link" do %>
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
+        <% end %>
       </li>
 
       <!-- Divider -->
@@ -62,7 +63,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Privilégios</h6>
-            <a class="collapse-item" href="buttons.html">Administradores</a>
+            <%= link_to 'Administradores', admins_backoffice_admins_index_path, class: 'collapse-item'%>
             <a class="collapse-item" href="cards.html">Usuários</a>
           </div>
         </div>
