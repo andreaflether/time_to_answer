@@ -1,0 +1,26 @@
+<h2 class="text-gray-800 mb-4"><%= action_message %> <%= t controller_name, scope: 'controllers' %></h2>
+
+<% if @subject.errors.any? %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   <ul class="mb-0">
+      <% @subject.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+   </ul>
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+   </button>
+</div>
+<% end %>
+
+<%= form_with(model: [:admins_backoffice, @subject], local: true) do |form| %>
+
+   <div class="form-group">
+      <%= form.label :description, class: "font-weight-bold" %>
+      <%= form.text_field :description, class: "form-control"%>
+   </div>
+
+   <%= form.submit "Salvar", class: "btn btn-primary" %>
+   <%= link_to "Voltar", :back, class: "btn btn-secondary"%>
+
+<% end %>

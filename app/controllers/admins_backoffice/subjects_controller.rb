@@ -2,7 +2,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
    before_action :set_subject, only: [:edit, :update, :destroy]
 
    def index
-      @subjects = Subject.all
+      @subjects = Subject.all.order(:description)
    end
 
    def edit  
@@ -10,7 +10,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
 
    def update 
       if @subject.update(subject_params)
-         redirect_to subjects_backoffice_subjects_path, notice: "Informações atualizadas com sucesso."
+         redirect_to admins_backoffice_subjects_path, notice: "Informações atualizadas com sucesso."
       else  
          render 'edit'
       end 
@@ -24,7 +24,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
       @subject = Subject.new(subject_params)
 
       if @subject.save 
-         redirect_to subjects_backoffice_subjects_path, notice: "Área cadastrada com sucesso!"
+         redirect_to admins_backoffice_subjects_path, notice: "Área cadastrada com sucesso!"
       else
          render 'new' 
       end 
@@ -32,7 +32,7 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
 
    def destroy 
       if @subject.destroy 
-         redirect_to subjects_backoffice_subjects_path, notice: "Área apagada com sucesso."
+         redirect_to admins_backoffice_subjects_path, notice: "Área apagada com sucesso."
       else 
          render 'index' 
       end 

@@ -7,6 +7,9 @@
       user:
         one: Usuário
         other: Usuários
+      subjects:
+        one: Área de conhecimento
+        other: Áreas de conhecimento
     attributes:
       admin:
         id: Código
@@ -22,6 +25,9 @@
         updated_at: Atualizado em
         password: Senha
         password_confirmation: Confirmação da senha
+      subject:
+        description: Nome
   controllers:
     users: Usuário
     admins: Administrador
+    subjects: Área de conhecimento
