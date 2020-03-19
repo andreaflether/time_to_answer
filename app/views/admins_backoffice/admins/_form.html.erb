@@ -1,3 +1,5 @@
+<h2 class="text-gray-800 mb-4"><%= action_message %> <%= t controller_name, scope: 'controllers' %></h2>
+
 <% if @admin.errors.any? %>
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
    <ul class="mb-0">
@@ -29,5 +31,6 @@
    </div>
 
    <%= form.submit "Salvar", class: "btn btn-primary" %>
+   <%= link_to "Voltar", :back, class: "btn btn-secondary"%>
 
 <% end %>

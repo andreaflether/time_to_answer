@@ -1,6 +1,6 @@
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between">
    <h2 class="mb-4">Listando administradores</h2>
-   <%= link_to new_admins_backoffice_admin_path, class: "btn btn-success btn-circle btn-sm", title: 'Cadastrar administrador',
+   <%= link_to new_admins_backoffice_admin_path, class: "mt-2 btn btn-success btn-circle btn-sm", title: 'Cadastrar administrador',
    'data-toggle' => 'tooltip' do %>
       <i class="fas fa-plus"></i>
    <% end %>
@@ -25,7 +25,11 @@
                <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary btn-circle btn-sm" do %>
                   <i class="fas fa-pencil"></i>
                <% end %>
-               <a href="#" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>        
+               <%= link_to admins_backoffice_admin_path(admin), method: :delete, 
+               data: { confirm: "Tem certeza que deseja apagar este administrador? Essa ação não poderá ser desfeita."}, 
+               class: "btn btn-danger btn-circle btn-sm" do %>
+                  <i class="fas fa-trash"></i>
+               <% end %>  
             </td>
          </tr>
       <% end %>                    

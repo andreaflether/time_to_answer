@@ -22,3 +22,6 @@
         updated_at: Atualizado em
         password: Senha
         password_confirmation: Confirmação da senha
+  controllers:
+    users: Usuário
+    admins: Administrador

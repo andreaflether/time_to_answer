@@ -4,3 +4,4 @@
 //= require sb-admin-2
 //= require jquery.dataTables
 //= require dataTables.bootstrap4 
+//= require lmat.bs.growl/jquery.bootstrap-growl

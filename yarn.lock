@@ -27,6 +27,11 @@ jquery@3.4.1:
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
 
+lmat.bs.growl@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/lmat.bs.growl/-/lmat.bs.growl-1.0.0.tgz#6804a3dfe79c42dbfa804886b6ae4aa7e24c668c"
+  integrity sha1-aASj3+ecQtv6gEiGtq5Kp+JMZow=
+
 popper.js@^1.16.0:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
