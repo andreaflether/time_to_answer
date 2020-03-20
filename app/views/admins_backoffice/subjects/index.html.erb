@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between">
-   <h2 class="mb-4">Listando áreas de conhecimento</h2>
+   <h2 class="mb-4"><%= t('messages.listing', resource: @subjects.model_name.human(count: 2)) %> </h2>
    <%= link_to new_admins_backoffice_subject_path, class: "mt-2 btn btn-success btn-circle btn-sm", title: 'Cadastrar assunto/área',
    'data-toggle' => 'tooltip' do %>
       <i class="fas fa-plus"></i>
@@ -7,11 +7,11 @@
 </div>
 
 <div class="table-responsive">
-   <table class="table table-bordered dataTable" width="100%" cellspacing="0">
+   <table class="table table-bordered table-hover dataTable" width="100%" cellspacing="0">
    <thead>
       <tr>
       <th>#</th>
-      <th>Assunto/Área</th>
+      <th><%= translate(@subjects, :description)%></th>
       <th>Ações</th>
       </tr>
    </thead>
@@ -26,7 +26,7 @@
                   <i class="fas fa-pencil"></i>
                <% end %>
                <%= link_to admins_backoffice_subject_path(subject), method: :delete, 
-               data: { confirm: "Tem certeza que deseja apagar esta área? Essa ação não poderá ser desfeita."}, 
+               data: { confirm: t('messages.confirmation', item: subject.description.truncate(20))}, 
                class: "btn btn-danger btn-circle btn-sm" do %>
                   <i class="fas fa-trash"></i>
                <% end %>  

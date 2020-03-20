@@ -1,0 +1,4 @@
+'pt-BR':
+  messages:
+    listing: Listando %{resource}
+    confirmation: Tem certeza que deseja apagar %{item}? Essa ação não poderá ser desfeita
