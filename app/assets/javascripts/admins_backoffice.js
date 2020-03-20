@@ -5,3 +5,4 @@
 //= require jquery.dataTables
 //= require dataTables.bootstrap4 
 //= require lmat.bs.growl/jquery.bootstrap-growl
+//= require cocoon

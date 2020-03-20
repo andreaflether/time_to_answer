@@ -13,6 +13,9 @@
       question:
         one: Pergunta
         other: Perguntas
+      answer: 
+        one: Resposta 
+        other: Respostas
     attributes:
       admin:
         id: Código
@@ -33,6 +36,8 @@
       question: 
         description: Enunciado 
         subject: Área de conhecimento
+      answer:
+        description: Descrição
   controllers:
     users: Usuário
     admins: Administrador

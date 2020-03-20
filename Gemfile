@@ -42,6 +42,7 @@ gem 'rails-i18n', '~> 5.1'
 # A terminal spinner for tasks that have non-deterministic time frame.
 gem 'tty-spinner'
 gem 'faker'
+gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
