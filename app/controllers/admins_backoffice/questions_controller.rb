@@ -1,8 +1,9 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   before_action :set_question, only: [:edit, :update, :destroy]
+  before_action :find_subjects, only: [:edit, :update, :new, :create]
 
   def index
-    @questions = Question.all.order(:description)
+    @questions = Question.includes(:subject).order(:description)
   end
 
   def new
@@ -13,7 +14,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     @question = Question.new(params_question)
 
     if @question.save
-      redirect_to admins_backoffice_question_path, notice: "Questão cadastrada com sucesso!"
+      redirect_to admins_backoffice_questions_path, notice: "Questão cadastrada com sucesso!"
     else
       render "new"
     end
@@ -24,7 +25,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
 
   def update
     if @question.update(params_question)
-      redirect_to admins_backoffice_question_path, notice: "Questão atualizada com sucesso!"
+      redirect_to admins_backoffice_questions_path, notice: "Questão atualizada com sucesso!"
     else
       render "edit"
     end
@@ -32,12 +33,13 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
 
   def destroy
     if @question.destroy
-      redirect_to admins_backoffice_question_path, notice: "Questão excluída com sucesso!"
+      redirect_to admins_backoffice_questions_path, notice: "Questão excluída com sucesso!"
     else
       render "index"
     end
   end
 
+  
   private
 
   def params_question
@@ -47,4 +49,8 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   def set_question
     @question = Question.find(params[:id])
   end
+
+  def find_subjects 
+    @subjects = Subject.all
+  end 
 end

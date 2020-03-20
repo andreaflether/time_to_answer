@@ -10,6 +10,9 @@
       subjects:
         one: Área de conhecimento
         other: Áreas de conhecimento
+      questions:
+        one: Pergunta
+        other: Perguntas
     attributes:
       admin:
         id: Código
@@ -27,7 +30,11 @@
         password_confirmation: Confirmação da senha
       subject:
         description: Nome
+      question: 
+        description: Enunciado 
+        subject: Área de conhecimento
   controllers:
     users: Usuário
     admins: Administrador
     subjects: Área de conhecimento
+    questions: Questão
