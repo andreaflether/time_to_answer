@@ -160,7 +160,7 @@ sup {
 
 a {
   color: #4e73df;
-  text-decoration: none;
+  text-decoration: none !important;
   background-color: transparent;
 }
 
@@ -10781,17 +10781,24 @@ a:focus {
   background-size: cover;
 }
 
-form.user .custom-checkbox.small label, form.new_admin .custom-checkbox.small {
+form.user .custom-checkbox.small label, 
+form.new_admin .custom-checkbox.small,
+form.new_user .custom-checkbox.small
+ {
   line-height: 1.5rem;
 }
 
-form.user .form-control-user, form.new_admin .form-control-user{
+form.user .form-control-user, 
+form.new_admin .form-control-user,
+form.new_user .form-control-user {
   font-size: 0.8rem;
   border-radius: 10rem;
   padding: 1.5rem 1rem;
 }
 
-form.user .btn-user, form.new_admin .btn-user {
+form.user .btn-user, 
+form.new_admin .btn-user,
+form.new_user .btn-user {
   font-size: 0.8rem;
   border-radius: 10rem;
   padding: 0.75rem 1rem;

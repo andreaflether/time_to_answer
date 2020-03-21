@@ -1,16 +1,19 @@
-<h2>Forgot your password?</h2>
+<div class="text-center">
+  <h1 class="h4 text-gray-900 mb-4">Esqueceu sua senha?</h1>
+</div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user",
+                              placeholder: "E-mail usado no cadastro" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+  <div class="actions mt-3 mb-4">
+    <%= f.submit "Enviar instruções por e-mail", class: "btn btn-primary btn-block btn-user" %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
+<hr>
+<div class="text-center">
+  <%= render "users/shared/links" %>
+</div>

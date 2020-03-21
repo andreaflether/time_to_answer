@@ -2,13 +2,9 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  private 
+  protected 
 
-  def layout_by_resource 
-    if devise_controller? && resource_class = Admin 
-      "admin_devise"
-    else 
-      "application"
-    end 
+  def layout_by_resource
+    devise_controller? ? "#{resource_name.to_s.downcase}_devise" : "application"
   end 
 end
