@@ -10781,17 +10781,17 @@ a:focus {
   background-size: cover;
 }
 
-form.user .custom-checkbox.small label {
+form.user .custom-checkbox.small label, form.new_admin .custom-checkbox.small {
   line-height: 1.5rem;
 }
 
-form.user .form-control-user {
+form.user .form-control-user, form.new_admin .form-control-user{
   font-size: 0.8rem;
   border-radius: 10rem;
   padding: 1.5rem 1rem;
 }
 
-form.user .btn-user {
+form.user .btn-user, form.new_admin .btn-user {
   font-size: 0.8rem;
   border-radius: 10rem;
   padding: 0.75rem 1rem;

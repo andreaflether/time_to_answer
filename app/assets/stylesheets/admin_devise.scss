@@ -1,0 +1,35 @@
+/*
+*= require font-awesome/css/font-awesome
+*= require sb-admin-2
+*/
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff !important;
+    border-color: #858796 !important;
+    background-color: #858796 !important;
+}
+
+.form-control {
+  transition: all .1s ease-in-out;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: #858796;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  outline: 0 none;
+}

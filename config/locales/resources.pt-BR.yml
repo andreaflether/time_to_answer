@@ -24,6 +24,7 @@
         updated_at: Atualizado em
         password: Senha
         password_confirmation: Confirmação da senha
+        remember_me: Guardar informações
       user:
         id: Código
         email: Email

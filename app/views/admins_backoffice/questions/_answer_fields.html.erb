@@ -1,0 +1,14 @@
+<div class="nested-fields mb-2">
+  <b><%= f.label :description %></b>
+  <div class="row align-items-center">
+    <div class="col-md-10">
+      <%= f.text_field :description, class: "form-control"%>
+    </div>
+    <div class="col-md-auto py-2">
+      <%= f.check_box :correct %> Correta?
+      <%= link_to_remove_association(f, class: "btn btn-danger btn-circle btn-sm mx-2") do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
