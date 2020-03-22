@@ -2,4 +2,16 @@ class Question < ApplicationRecord
   belongs_to :subject, inverse_of: :questions
   has_many :answers
   accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
+  
+  paginates_per 5
+
+  scope :last_questions, -> {
+    includes(:answers, :subject).last(5)
+  }
+
+  scope :search_for, ->(term, page) {
+    includes(:answers, :subject)
+    .where("description LIKE ?", "%#{term.downcase}%")
+    .page(page)
+  }
 end
