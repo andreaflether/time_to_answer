@@ -1,0 +1,13 @@
+<% @questions.each_with_index do |question, i| %>
+  <div class="col-md-12 mb-3">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <small><b><p><%= question.subject.description %></p></b></small>
+        <h5><%= i+1 %>. <%= question.description %></h5>
+        <% question.answers.each do |answer| %>
+          <p><%= answer.description %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
