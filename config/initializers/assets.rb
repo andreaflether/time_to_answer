@@ -22,3 +22,6 @@ Rails.application.config.assets.precompile += %w( sb-user-2.js sb-user-2.css )
 # Login layouts for Admin and User
 Rails.application.config.assets.precompile += %w( admin_devise.css admin_devise.js )
 Rails.application.config.assets.precompile += %w( user_devise.css user_devise.js )
+
+# Site
+Rails.application.config.assets.precompile += %w( site.css site.js )

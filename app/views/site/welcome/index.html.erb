@@ -1,14 +1,20 @@
-<h1>Site::Welcome#index</h1>
-<p>Find me in app/views/site/welcome/index.html.erb</p>
+<h2 class="text-center title mb-4">Últimas perguntas cadastradas</h2>
 
-<% if user_signed_in? %>
-  <p>Usuário <b>ESTÁ</b> logado</p>
-<% else %>
-  <p>Usuário <b>NÃO ESTÁ</b> está logado</p>
-<% end %>
-
-<% if admin_signed_in? %>
-  <p>Administrador <b>ESTÁ</b> logado</p>
-<% else %>
-  <p>Administrador <b>NÃO ESTÁ</b> está logado</p>
-<% end %>
+<div class="container">
+  <div class="row">
+  <% @questions.each_with_index do |question, i| %>
+    <div class="col-md-12 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <small><b><p><%= question.subject.description %></p></b></small>
+          <h5><%= i+1 %>. <%= question.description %></h5>
+          <% question.answers.each do |answer| %>
+            <p><%= answer.description %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    
+  </div>
+</div>
