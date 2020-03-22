@@ -16,6 +16,16 @@
   padding: 15px !important;
 }
 
+.form-control.search {
+  height: 57px !important;
+  border-radius: 0 !important;
+}
+
+.features-jumbotron {
+  background-color: rgb(56, 56, 56) !important;
+}
+
+
 .features-section {
   h1 {
     margin-bottom: 10px;
@@ -39,4 +49,9 @@
 
 .title {
   font-weight: 700;
+}
+
+.pagination > .page-item:last-child .page-link,
+.pagination > .page-item:first-child .page-link {
+  border-radius: 0 !important;
 }
