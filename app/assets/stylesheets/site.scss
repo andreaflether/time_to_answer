@@ -18,6 +18,15 @@ $white: rgba(255, 255, 255, 0.8);
   border: 0 !important;
 }
 
+.text-tta {
+  color: $primary;
+}
+
+.text-tta:hover {
+  color: darken($primary, 5%);
+  text-decoration: none !important;
+}
+
 .categories,
 .primary {
   color: $primary;
@@ -106,7 +115,9 @@ $white: rgba(255, 255, 255, 0.8);
   }
 }
 
-.question {
+.question, 
+.categories,
+.site-description {
   color: #444;
 }
 

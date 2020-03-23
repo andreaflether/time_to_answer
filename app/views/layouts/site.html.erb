@@ -11,31 +11,36 @@
     <%= stylesheet_link_tag 'site' %>
 
   </head>
+
   <body>
   <header>
   <div class="navbar navbar-dark navbar-expand-lg bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      
+    <div class="container d-flex justify-content-between">  
       <strong>
         <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
-        <i class="far fa-clock"></i> &nbsp; Time To Answer
+          <i class="far fa-clock"></i> &nbsp; Time To Answer
         <% end %>
       </strong>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Criar conta', new_user_registration_path, class: "nav-link btn btn-outline-light ml-2 btn-register"%>
-      </li>
-    </ul>
-    
-    </div>
+      <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <% unless user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Criar conta', new_user_registration_path, class: "nav-link btn btn-outline-light ml-2 btn-register"%>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <span class="text-light"><%= current_user.email %></span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
@@ -58,6 +63,24 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
+
+    <script>
+
+    <% if notice %>
+      $(document).ready(function() {
+        // Growl Notifications 
+        
+        $.bootstrapGrowl('<%= notice %>', {
+          type: 'success', // (null, 'info', 'danger', 'success')
+          align: 'right', // ('left', 'right', or 'center')
+          allow_dismiss: true, // If true then will display a cross to close the popup.
+          stackup_spacing: 10, // spacing between consecutively stacked growls.
+          width: 300 // (integer, or 'auto')
+        });
+      });
+      
+    <% end %>
+</script>
 	</body>
 
 </html>

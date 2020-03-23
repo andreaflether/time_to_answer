@@ -4,7 +4,7 @@
         <%= image_tag "https://templated.co/items/demos/megacorp/images/pic01.jpg", 
         class: "img-fluid" %>
         
-        <p class="mt-3">
+        <p class="mt-3 site-description">
           O site possui diversas questões divididas por áreas de conhecimento e na área do aluno você possui acesso a
           todos os seus resultados obtidos ao responder perguntas ao longo do tempo. Todos os recursos do site são 
           completamente gratuitos e em momento algum você será submetido a pagar por uma assinatura ou algo do tipo. 
@@ -12,13 +12,16 @@
         </p>
       </div> 
           
-      <div class="col-md-4">
-        <h5 class="text-center font-weight-bold categories"><i class="fas fa-list"></i> &nbsp; Categorias mais populares</h5>
+      <div class="col-md-4 categories">
+        <h5 class="text-center font-weight-bold"><i class="fas fa-list"></i> &nbsp; Categorias mais populares</h5>
         <div class="row">
           <div class="col-md-12 text-center">
             <ul class="list-group list-group-flush">
               <% @subjects.last(8).each do |subject| %>
-                <li class="list-group-item"><%= subject.description %> (<%= subject.questions.count %> questões)</li>
+                <li class="list-group-item"><%= link_to subject.description, 
+                site_search_subject_path(subject.id, subject.description), class: "text-tta" %> 
+                (<%= subject.questions_count %> questões)
+                </li>
               <% end %>
             </ul>
           </div>
@@ -30,7 +33,7 @@
   <section class="jumbotron text-center features-jumbotron">
     <div class="container">
       <div class="row text-light features-section"> 
-        <div class="col-md-4 px-4">       
+        <div class="col-md-4 px-4 my-3">       
           <h1><i class="fas fa-paste"></i></h1> 
           <h5>Áreas de conhecimento</h5>
           <hr>
@@ -38,7 +41,7 @@
           Atualmente, o site conta com mais de 200 áreas de diversas especializações.</p>
         </div>
 
-        <div class="col-md-4 px-4">
+        <div class="col-md-4 px-4 my-3">
           <h1><i class="fas fa-chart-line"></i></h1>
           <h5>Estatísticas</h5>
           <hr>
@@ -46,7 +49,7 @@
           com porcentagem e informações sobre todas as questões que você já respondeu.</p>
         </div>
 
-        <div class="col-md-4 px-4">
+        <div class="col-md-4 px-4 my-3">
           <h1><i class="fas fa-history"></i></h1>
           <h5>Histórico de respostas</h5>
           <hr>
