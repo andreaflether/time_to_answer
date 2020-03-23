@@ -3,17 +3,77 @@
 *= require font-awesome/css/font-awesome
 */
 
+$primary: #00AABB;
+$white: rgba(255, 255, 255, 0.8);
+
 * {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.jumbotron-heading {
-  font-weight: 700 !important;
+.navbar-brand svg {
+  color: $primary !important;
+}
+
+.navbar-dark .navbar-toggler {
+  border: 0 !important;
+}
+
+.categories,
+.primary {
+  color: $primary;
+}
+
+.section-img {
+  width: 100% !important;
+  height: 50% !important;
+  object-fit: cover !important;
 }
 
 .btn {
   border-radius: 0 !important;
   padding: 15px !important;
+}
+
+.btn-primary {
+  background-color: $primary !important;
+  border-color: darken($primary, 3%) !important;
+}
+
+.btn-primary.small {
+  padding: 8px 15px !important;
+}
+
+.btn-primary:hover {
+  background-color: darken($primary, 4%) !important;
+}
+
+.jumbotron-heading {
+  font-weight: 700 !important;
+  color: #343a40 !important;
+}
+
+.jumbotron {
+  border-radius: 0 !important;
+}
+
+
+.nav-link {
+  color: $white !important;
+}
+
+.section-2 {
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.btn-register {
+  padding: 8px 10px !important;
+  color: $white !important;
+  border-color: $white !important;
+}
+
+.btn-register:hover {
+  color: #000 !important;
 }
 
 .form-control.search {
@@ -22,13 +82,13 @@
 }
 
 .features-jumbotron {
-  background-color: rgb(56, 56, 56) !important;
+  background-color: #1a1b1d !important;
 }
-
 
 .features-section {
   h1 {
     margin-bottom: 10px;
+    color: #00AABB;
   }
   
   h5 {
@@ -55,3 +115,129 @@
 .pagination > .page-item:first-child .page-link {
   border-radius: 0 !important;
 }
+
+.list-group-flush > li {
+  font-size: 14px;
+}
+
+.badge-primary {
+  background-color: $primary !important;
+}
+
+.badge-gray { 
+  background-color: transparent;
+  border: 1px solid #aaaaaa;
+  color: #aaaaaa;
+  font-size: 13px !important;
+  transition: all .2s ease-in-out;
+}
+
+.badge-gray:hover {
+  background-color: #666666;
+  border: 1px solid #666666;
+  color: white;
+}
+
+// Radio Buttons
+
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: block;
+  float: left;
+  margin-right: -2rem;
+  opacity: 0;
+  width: 1rem;
+  z-index: -1;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  padding-left: 2.2rem;
+  padding-right: 0.75rem;
+  position: relative;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+  font-size: 13px;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  border-radius: 2px;
+  border: solid 1px;
+  content: '';
+  display: inline-block;
+  height: 1.4rem;
+  left: 0;
+  line-height: 1.4rem;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  width: 1.4rem;
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  content: '\f00c';
+}
+
+input[type="checkbox"] + label:before {
+  border-radius: 2px;
+}
+
+input[type="radio"] + label:before {
+  border-radius: 100%;
+}
+
+::-webkit-input-placeholder { opacity: 1.0; }
+:-moz-placeholder { opacity: 1.0; }
+:-ms-input-placeholder { opacity: 1.0; }
+
+.formerize-placeholder {
+  opacity: 1.0;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  color: #444;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  background: rgba(144, 144, 144, 0.075);
+  border-color: rgba(144, 144, 144, 0.25);
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  background-color: $primary;
+  border-color: $primary;
+  color: #ffffff;
+}
+
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+  border-color: $primary;
+  box-shadow: 0 0 0 1px $primary;
+}
+
+::-webkit-input-placeholder { color: #bbb !important; }
+::-moz-placeholder { color: #bbb !important; }
+:-ms-input-placeholder { color: #bbb !important; }
+.formerize-placeholder { color: #bbb !important; }

@@ -5,39 +5,49 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8d9d868ad3.js"></script>
     <%= stylesheet_link_tag 'application' %>
     <%= stylesheet_link_tag 'site' %>
 
-  
   </head>
   <body>
   <header>
   <div class="navbar navbar-dark navbar-expand-lg bg-dark shadow-sm">
     <div class="container d-flex justify-content-between">
-      <strong><%= link_to 'Time To Answer', root_path, class: "navbar-brand d-flex align-items-center"%></strong>
       
+      <strong>
+        <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+        <i class="far fa-clock"></i> &nbsp; Time To Answer
+        <% end %>
+      </strong>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
+        <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Criar conta</a>
+        <%= link_to 'Criar conta', new_user_registration_path, class: "nav-link btn btn-outline-light ml-2 btn-register"%>
       </li>
     </ul>
     
     </div>
+    </div>
   </div>
 </header>
+
   <section class="jumbotron text-center">
     <div class="container">
       <% unless params[:term] %>
         <h1 class="jumbotron-heading">Qual o seu objetivo?</h1>
-        <p class="lead text-muted">Somos uma plataforma completa para tornar seus estudos mais simples, com 
-        diversas questões divididas por áreas de conhecimento e todos os resultados que você obteve ao responder
-        perguntas ao longo do tempo.</p>
+        <p class="lead text-muted">
+        Monitore seu desempenho e sua evolução, marque áreas de conhecimento do seu interesse e controle seus estudos.
+        Somos uma plataforma completa para tornar seus estudos mais simples!
+        </p>
       <% else %>
         <h3 class="jumbotron-heading">Resultados da pesquisa</h3>
         <p class="lead text-muted"><%= @questions.total_count %> resultados encontrados para o termo 
@@ -45,10 +55,10 @@
       <% end %>
 
       <%= form_with(url: site_search_path, local: true, method: :get, class: "form-row justify-content-center") do |form| %>
-      <div class="col-5">
+      <div class="col-md-5 mt-2">
         <%= form.text_field :term, class: "form-control search", placeholder: "Pesquisar palavras-chave..."%>
       </div>
-      <div class="col-auto">
+      <div class="col-md-auto mt-2">
         <%= form.submit "Pesquisar", class: "btn btn-primary"%>
       </div>
       <% end %>

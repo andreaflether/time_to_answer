@@ -1,13 +1,22 @@
-<% @questions.each_with_index do |question, i| %>
-  <div class="col-md-12 mb-3">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <small><b><p><%= question.subject.description %></p></b></small>
-        <h5><%= i+1 %>. <%= question.description %></h5>
-        <% question.answers.each do |answer| %>
-          <p><%= answer.description %></p>
-        <% end %>
+<% @questions.each do |question| %>
+  <%= form_with url: site_answer_path, local: true, class: "col-md-12" do |form| %>
+    <div class="col-md-12 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <span class="badge badge-gray mb-2"><%= question.subject.description %></span>
+          <h5 class="mb-3"><%= question.description %></h5>     
+          <% question.answers.each do |answer| %>
+            <div class="d-block">
+              <%= radio_button_tag "answer", answer.id %> <%= form.label "answer_#{answer.id}" do %>
+              <%= answer.description %>
+              <% end %>
+            </div>       
+          <% end %>
+
+          <%= form.submit "Responder", class: "btn btn-primary small mt-2"%>
+
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
