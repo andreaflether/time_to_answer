@@ -56,7 +56,6 @@ $white: rgba(255, 255, 255, 0.8);
   border-radius: 0 !important;
 }
 
-
 .nav-link {
   color: $white !important;
 }
@@ -107,6 +106,10 @@ $white: rgba(255, 255, 255, 0.8);
   }
 }
 
+.question {
+  color: #444;
+}
+
 .title {
   font-weight: 700;
 }
@@ -126,16 +129,17 @@ $white: rgba(255, 255, 255, 0.8);
 
 .badge-gray { 
   background-color: transparent;
-  border: 1px solid #aaaaaa;
-  color: #aaaaaa;
+  border: 1px solid $primary;
   font-size: 13px !important;
   transition: all .2s ease-in-out;
+  color: $primary !important;
+  // box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .badge-gray:hover {
-  background-color: #666666;
-  border: 1px solid #666666;
-  color: white;
+  background-color: $primary;
+  border: 1px solid $primary;
+  color: white !important;
 }
 
 // Radio Buttons
@@ -160,7 +164,7 @@ input[type="radio"] + label {
   cursor: pointer;
   display: inline-block;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   padding-left: 2.2rem;
   padding-right: 0.75rem;
   position: relative;
@@ -185,7 +189,7 @@ input[type="radio"] + label:before {
   display: inline-block;
   height: 1.4rem;
   left: 0;
-  line-height: 1.4rem;
+  line-height: 1.3rem;
   position: absolute;
   text-align: center;
   top: 2px;

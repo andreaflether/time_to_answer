@@ -1,19 +1,23 @@
 <% @questions.each do |question| %>
-  <%= form_with url: site_answer_path, local: true, class: "col-md-12" do |form| %>
+  <%= form_with url: site_answer_path, class: "col-md-12" do |form| %>
     <div class="col-md-12 mb-3">
       <div class="card shadow-sm">
         <div class="card-body">
-          <span class="badge badge-gray mb-2"><%= question.subject.description %></span>
-          <h5 class="mb-3"><%= question.description %></h5>     
+          <div class="d-flex align-items-center">
+            <%= link_to "#{question.subject.description} (#{question.subject.questions.count})", 
+            site_search_subject_path(question.subject_id, question.subject.description),
+            class: "badge badge-gray mb-3 mr-2" %> 
+            <h5 class="mb-3 question"><%= question.description %></h5> 
+          </div>
           <% question.answers.each do |answer| %>
             <div class="d-block">
-              <%= radio_button_tag "answer", answer.id %> <%= form.label "answer_#{answer.id}" do %>
+              <%= radio_button_tag "answer_id", answer.id %> <%= form.label "answer_id_#{answer.id}", id: "#{answer.id}" do %>
               <%= answer.description %>
               <% end %>
             </div>       
           <% end %>
 
-          <%= form.submit "Responder", class: "btn btn-primary small mt-2"%>
+          <%= form.submit "Responder", class: "btn btn-primary small mt-2" %>
 
         </div>
       </div>

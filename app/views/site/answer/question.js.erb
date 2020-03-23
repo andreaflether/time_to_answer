@@ -1,0 +1,13 @@
+var x = document.getElementById('<%= @answer.id %>');
+
+x.classList.remove('text-success');
+x.classList.remove('text-danger');
+
+console.log(x);
+
+if (<%= @answer.correct %>) {
+  x.classList.add('text-success');
+} else {
+  x.classList.add('text-danger');
+}
+

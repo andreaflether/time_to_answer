@@ -14,4 +14,10 @@ class Question < ApplicationRecord
     .where("description LIKE ?", "%#{term.downcase}%")
     .page(page)
   }
+
+  scope :search_for_subject, ->(subject_id, page) {
+    includes(:answers, :subject)
+    .where(subject_id: subject_id)
+    .page(page)
+  }
 end
