@@ -33,6 +33,8 @@
         password: Senha
         password_confirmation: Confirmação da senha
         remember_me: Lembre-se de mim
+        first_name: Nome 
+        last_name: Sobrenome
       subject:
         description: Nome
       question: 
@@ -45,3 +47,4 @@
     admins: Administrador
     subjects: Área de conhecimento
     questions: Questão
+    profile: Perfil
