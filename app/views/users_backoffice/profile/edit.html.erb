@@ -37,6 +37,23 @@
             </div>
           </div>
         </div>
+
+        <%= form.fields_for :user_profile do |profile_form| %>
+          <div class="form-group">
+            <%= profile_form.label :address, class: "font-weight-bold" %>
+            <%= profile_form.text_field :address, class: "form-control"%>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= profile_form.label :birthday, class: "font-weight-bold" %>
+              <%= profile_form.text_field :birthday, class: "form-control"%>
+            </div>
+            <div class="col-md-6">
+              <%= profile_form.label :gender, class: "font-weight-bold" %>
+              <%= profile_form.text_field :gender, class: "form-control"%>
+            </div>
+          </div>
+        <% end %>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -51,8 +68,8 @@
             </div>   
           </div>
         </div>
-        <%= form.submit "Salvar", class: "btn btn-primary mt-2" %>
-        <%= link_to "Voltar", :back, class: "btn btn-secondary mt-2"%>
+        <%= form.submit "Salvar", class: "btn btn-primary mt-3" %>
+        <%= link_to "Voltar", :back, class: "btn btn-secondary mt-3"%>
       <% end %>  
     </div>
   </div>

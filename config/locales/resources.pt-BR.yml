@@ -42,6 +42,10 @@
         subject: Área de conhecimento
       answer:
         description: Descrição
+      user_profile:
+        address: Endereço
+        gender: Gênero
+        birthday: Data de nascimento
   controllers:
     users: Usuário
     admins: Administrador
