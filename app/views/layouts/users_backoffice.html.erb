@@ -107,8 +107,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.full_name%></span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.full_name %></span>
+                <%= image_tag avatar_url, class: "img-profile rounded-circle"%>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -133,6 +133,7 @@
         <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
+              <%= form_with(url: users_backoffice_profile_path, model: current_user, local: true) do |form| %>
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Alterar foto de perfil</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -140,15 +141,24 @@
                 </button>
               </div>
               <div class="modal-body">
-                ...
+                <div class="text-center mb-3">
+                <%= image_tag avatar_url, class: "border p-1 rounded-circle img-fluid w-50"%>
+                </div>            
+                <%= form.fields_for :user_profile do |profile_form| %>
+                  <div class="custom-file">
+                    <%= profile_form.file_field :avatar, class: "custom-file-input", id: "custom_file" %>
+                    <%= profile_form.label :avatar, class: "custom-file-label", id: "custom_file", 
+                                                    data: { browse: "Escolher arquivo"} %>
+                  </div>          
+                <% end %>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Salvar alterações</button>
+              <div class="modal-footer d-block text-center">
+                <%= form.submit "Salvar alterações", class: "btn btn-primary"%>
               </div>
+              <% end %>
             </div>
           </div>
-</div>
+        </div>
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
