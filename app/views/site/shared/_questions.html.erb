@@ -1,6 +1,5 @@
 <% @questions.each do |question| %>
-  <%= form_with url: site_answer_path, class: "col-md-12" do |form| %>
-    <div class="col-md-12 mb-3">
+  <%= form_with url: site_answer_path, class: "col-md-12 mb-3" do |form| %>
       <div class="card shadow-sm">
         <div class="card-body">
           <div class="d-flex align-items-center">
@@ -16,11 +15,22 @@
               <% end %>
             </div>       
           <% end %>
-
           <%= form.submit "Responder", class: "btn btn-primary small mt-2" %>
-
         </div>
-      </div>
-    </div>
+    </div>  
   <% end %>
 <% end %>
+
+<% if user_signed_in? %>
+  <div class="col-md-12">
+    <%= paginate @questions %>
+  </div>
+<% else %>
+  <div class="col-md-12 text-center">
+    <h4 class="warning mt-3"><%= link_to 'Cadastre-se', new_user_registration_path, class: "text-tta" %> ou faça 
+    <%= link_to 'login', new_user_session_path, class: "text-tta" %> para responder mais perguntas!</h4>
+  </div>
+<% end %>
+
+
+  

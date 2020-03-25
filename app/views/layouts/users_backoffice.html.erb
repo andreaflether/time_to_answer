@@ -108,7 +108,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.full_name %></span>
-                <%= image_tag avatar_url, class: "img-profile rounded-circle"%>
+                <%= image_tag avatar_url, class: "img-profile rounded-circle", id: "user_avatar"%>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -133,7 +133,7 @@
         <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-              <%= form_with(url: users_backoffice_profile_path, model: current_user, local: true) do |form| %>
+              <%= form_with(url: users_backoffice_profile_path, model: current_user) do |form| %>
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Alterar foto de perfil</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -142,7 +142,7 @@
               </div>
               <div class="modal-body">
                 <div class="text-center mb-3">
-                <%= image_tag avatar_url, class: "border p-1 rounded-circle img-fluid w-50"%>
+                <%= image_tag avatar_url, class: "border p-1 rounded-circle img-fluid w-50", id: "avatar_onchange" %>
                 </div>            
                 <%= form.fields_for :user_profile do |profile_form| %>
                   <div class="custom-file">
@@ -215,7 +215,6 @@
   <% if notice %>
     $(document).ready(function() {
       // Growl Notifications 
-      
       $.bootstrapGrowl('<%= notice %>', {
         type: 'success', // (null, 'info', 'danger', 'success')
         align: 'right', // ('left', 'right', or 'center')

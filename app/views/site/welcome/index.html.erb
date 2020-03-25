@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row section-2">
-      <div class="col-md-8">
+      <div class="col-md-8 mt-3 mb-4 ">
         <%= image_tag "https://templated.co/items/demos/megacorp/images/pic01.jpg", 
         class: "img-fluid" %>
         
@@ -12,7 +12,7 @@
         </p>
       </div> 
           
-      <div class="col-md-4 categories">
+      <div class="col-md-4 mt-3 mb-2 categories">
         <h5 class="text-center font-weight-bold"><i class="fas fa-list"></i> &nbsp; Categorias mais populares</h5>
         <div class="row">
           <div class="col-md-12 text-center">
@@ -20,7 +20,7 @@
               <% @subjects.last(8).each do |subject| %>
                 <li class="list-group-item"><%= link_to subject.description, 
                 site_search_subject_path(subject.id, subject.description), class: "text-tta" %> 
-                (<%= subject.questions_count %> questões)
+                <span>(<%= subject.questions_count %> questões)</span>
                 </li>
               <% end %>
             </ul>
@@ -68,3 +68,4 @@
     <%= render 'site/shared/questions'%>    
   </div>
 </div>
+  

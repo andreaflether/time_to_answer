@@ -27,9 +27,30 @@ $white: rgba(255, 255, 255, 0.8);
   text-decoration: none !important;
 }
 
+.categories h5,
+.dropdown-item,
+.question, 
 .categories,
-.primary {
-  color: $primary;
+.site-description,
+.title,
+.warning {
+  color: #444;
+}
+
+.categories span {
+  color: rgb(141, 141, 141);
+}
+
+.categories,
+.primary,
+.text-primary {
+  color: $primary !important;
+}
+
+a.text-primary-link:hover,
+#navbarDropdown:hover {
+  text-decoration: none;
+  color: $primary !important;
 }
 
 .section-img {
@@ -70,8 +91,8 @@ $white: rgba(255, 255, 255, 0.8);
 }
 
 .section-2 {
-  margin-top: 70px;
-  margin-bottom: 50px;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .btn-register {
@@ -115,14 +136,23 @@ $white: rgba(255, 255, 255, 0.8);
   }
 }
 
-.question, 
-.categories,
-.site-description {
-  color: #444;
-}
-
 .title {
   font-weight: 700;
+}
+
+ul.pagination {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+ul.pagination > li > a.page-link {
+  color: $primary !important;
+}
+
+ul.pagination > li.active > a.page-link {
+  color: white !important;
+  background-color: $primary !important;
+  border-color: $primary !important;
 }
 
 .pagination > .page-item:last-child .page-link,
@@ -151,6 +181,11 @@ $white: rgba(255, 255, 255, 0.8);
   background-color: $primary;
   border: 1px solid $primary;
   color: white !important;
+}
+
+.dropdown-menu {
+  border-radius: 0 !important;
+  border: 1px solid #ced4da !important;
 }
 
 // Radio Buttons

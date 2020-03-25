@@ -5,8 +5,8 @@ class Question < ApplicationRecord
   
   paginates_per 5
 
-  scope :last_questions, -> {
-    includes(:answers, :subject).last(5)
+  scope :last_questions, ->(page) {
+    includes(:answers, :subject).order('created_at desc').page(page)
   }
 
   scope :search_for, ->(term, page) {
