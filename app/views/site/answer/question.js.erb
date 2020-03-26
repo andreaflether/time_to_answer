@@ -1,13 +1,11 @@
 var x = document.getElementById('<%= @answer.id %>');
 
-x.classList.remove('text-success');
-x.classList.remove('text-danger');
-
-console.log(x);
+x.classList.remove('text-success', 'font-weight-bold');
+x.classList.remove('text-danger', 'font-weight-bold');
 
 if (<%= @answer.correct %>) {
-  x.classList.add('text-success');
+  x.classList.add('text-success', 'font-weight-bold');
 } else {
-  x.classList.add('text-danger');
+  x.classList.add('text-danger', 'font-weight-bold');
 }
 
