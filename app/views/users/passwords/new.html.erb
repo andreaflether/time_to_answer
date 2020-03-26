@@ -1,16 +1,18 @@
 <div class="text-center">
-  <h1 class="h4 text-gray-900 mb-4">Esqueceu sua senha?</h1>
+  <h1 class="h4 text-gray-900 mb-2">Esqueceu sua senha?</h1>
+  <p class="mb-4">Relaxa, acontece! Basta digitar o mesmo e-mail que você usou para se cadastrar no site e enviaremos
+  um link para recuperar sua senha. </p>
 </div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
   <div class="form-group">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-user",
-                              placeholder: "E-mail usado no cadastro" %>
+                              placeholder: "E-mail" %>
   </div>
 
   <div class="actions mt-3 mb-4">
-    <%= f.submit "Enviar instruções por e-mail", class: "btn btn-primary btn-block btn-user" %>
+    <%= f.submit "Enviar instruções", class: "btn btn-primary btn-block btn-user" %>
   </div>
 <% end %>
 <hr>
