@@ -46,6 +46,7 @@
         address: Endereço
         gender: Gênero
         birthday: Data de nascimento
+        zip_code: CEP
   controllers:
     users: Usuário
     admins: Administrador

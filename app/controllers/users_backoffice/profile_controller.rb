@@ -31,6 +31,6 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
 
   def user_params 
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
-                                 user_profile_attributes: [:id, :birthday, :address, :gender, :avatar])
+                                 user_profile_attributes: [:id, :birthday, :zip_code, :address, :gender, :avatar])
   end 
 end
