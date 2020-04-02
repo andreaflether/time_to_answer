@@ -1,9 +1,9 @@
-var x = document.getElementById('<%= @answer.id %>');
+var x = document.getElementById('<%= @answer_id %>');
 
 x.classList.remove('text-success', 'font-weight-bold');
 x.classList.remove('text-danger', 'font-weight-bold');
 
-if (<%= @answer.correct %>) {
+if (<%= @correct %>) {
   x.classList.add('text-success', 'font-weight-bold');
 } else {
   x.classList.add('text-danger', 'font-weight-bold');
