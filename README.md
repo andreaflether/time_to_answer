@@ -1,24 +1,36 @@
-# README
+# Time To Answer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto final do curso Ruby on Rails 5.x (Jackson Pires)
 
-Things you may want to cover:
+## Instalação
+**1. Baixar repositório**
+```
+git clone blablabla
+```
 
-* Ruby version
+**2. Rodar bundle:**
+```ruby
+bundle install # or just bundle
+```
 
-* System dependencies
+**3. Executar task com dados iniciais (desenvolvimento)**
+```ruby
+rais dev:setup
+``` 
 
-* Configuration
+**4. Rodar o console e em seguida realizar a adição dos índices:**
+``` 
+rails c
+```
+```ruby
+Question.reindex
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Opcional: instalar Redis para verificar se as chaves foram corretamente cadastradas*
+```
+sudo apt-get install redis-server
+```
+*Todas as chaves devem aparecer após rodar o comando:*
+```
+redis-cli KEYS '*'
+```
