@@ -5,7 +5,7 @@ Projeto final do curso Ruby on Rails 5.x (Jackson Pires)
 ## Instalação
 **1. Baixar repositório**
 ```
-git clone blablabla
+git clone https://github.com/andreaflether/time_to_answer.git
 ```
 
 **2. Rodar bundle:**
