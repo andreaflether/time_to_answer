@@ -22,7 +22,7 @@
 !/storage/.keep
 
 # Ignore Templates
-/public/templates/*
+/public/templates/
 
 /node_modules
 /yarn-error.log
