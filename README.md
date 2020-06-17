@@ -1,24 +1,42 @@
-# README
+# Time To Answer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projeto final do curso [Ruby on Rails 5.x (Jackson Pires).](https://www.udemy.com/course/rubyonrails-5x/)
 
-Things you may want to cover:
+## Instalação
+**1. Baixar repositório**
+```
+git clone https://github.com/andreaflether/time_to_answer.git
+```
 
-* Ruby version
+**2. Rodar bundle:**
+```ruby
+bundle install # or just bundle
+```
+**3. Instalar Redis:**
+```
+sudo apt-get install redis-server
+```
+Opcional: a conexão pode ser verificada com o comando `redis-cli ping`. O retorno `PONG` significa que a mesma foi bem sucedida.
 
-* System dependencies
+**4. Executar task com dados iniciais (desenvolvimento)**
+```ruby
+rais dev:setup
+``` 
 
-* Configuration
+**5. Todas as chaves adicionadas na task devem aparecer após rodar o comando:**
+```
+redis-cli KEYS '*'
+```
 
-* Database creation
+**6. Iniciar serviço do elasticsearch. Antes, verifique o output do comando `ps -p 1`.**
+- **systemd:** `sudo systemctl start elasticsearch.service`
+- **init:** `sudo -i service elasticsearch start`
 
-* Database initialization
+**7. Rodar o console e em seguida realizar a adição dos índices:**
+``` 
+rails c
+```
+```ruby
+Question.reindex
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
